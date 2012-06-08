@@ -1,4 +1,8 @@
 Ext.application({
+    models: ["Photo"],
+
+    controllers: ["test", "Main"],
+
     name: 'picasa',
 
     requires: [
@@ -30,18 +34,6 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('picasa.view.Main'));
-    },
-
-    onUpdated: function() {
-        Ext.Msg.confirm(
-            "Application Update",
-            "This application has just successfully been updated to the latest version. Reload now?",
-            function(buttonId) {
-                if (buttonId === 'yes') {
-                    window.location.reload();
-                }
-            }
-        );
+       // Ext.Viewport.add(Ext.create('picasa.view.Main'));
     }
 });

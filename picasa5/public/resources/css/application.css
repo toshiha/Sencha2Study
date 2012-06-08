@@ -1,0 +1,85 @@
+.titleBox {
+	padding: 10px;
+	clear: both;
+	padding-bottom: 0;
+}
+.titleBox  h2 {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.2;
+}
+.thumb-wrap {
+	float: left;
+	padding: 5px;
+}
+.thumb-wrap.x-item-selected {
+	background: #ccc;
+}
+.thumb-wrap.x-view-over {
+	background: #ccc;
+}
+.thumb-wrap img {
+	display: block;
+}
+.imageContainer {
+	padding: 5px;
+}
+.album-wrap {
+	float: left;
+	text-align: center;
+}
+.album-wrap-inner {
+	padding: 5px;
+	margin: 5px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 4px #999;.album-wrap;
+}
+span.title {
+	display: block;
+	padding: 0px 5px 5px;
+	font-size:11px; 
+	height:12px;
+	line-height:1;
+	width: 100px;
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	color: #666;
+}
+.album-wrap.x-item-selected {
+	background: #eee;
+}
+.album-wrap.x-view-over {
+	background: #eee;
+}
+.album-wrap img {
+	display: block;
+	border: 1px solid #eee;
+}
+.albumContainer {
+	padding: 5px;
+}
+.detailview {
+	background: #000;
+}
+.detailImageContainer {
+	padding: 10px;
+	text-align: center;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+.detailImageContainer .detailImage {
+}
+.following {
+	text-align: center;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+}

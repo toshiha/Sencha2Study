@@ -1,0 +1,44 @@
+$base-color: #555555;
+$base-gradient: 'glossy';
+@import "compass/css3";
+@import 'sencha-touch/default/all';
+
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-list-paging;
+@include sencha-list-pullrefresh;
+@include sencha-layout;
+@include sencha-carousel;
+@include sencha-form;
+@include sencha-msgbox;
+@include sencha-loading-spinner;
+
+.mainView .x-toolbar-title { font-size: 17px; text-align: left; padding-top: 3px;background: url(../../../../public/resources/images/logo.png) no-repeat 15px center; padding-left: 40px;}
+.x-tabbar.x-docked-top .x-tab { padding:0;  margin:0; border-radius:0; width: 33%; color: #fff; border-left: 1px solid rgba(255,255,255,0.2); border-right: 1px solid rgba(0,0,0,0.2);  font-size: 22px;}
+.x-tabbar.x-docked-top .x-tab:nth-child(1) {border-left:none;}
+.x-tabbar.x-docked-top .x-tab:nth-child(3) {border-right:none;}
+.x-tabbar.x-docked-top .x-tab-active { background: transparent;-webkit-box-shadow:none; background: #eee; @include background-image(linear-gradient(#ffffff,#cccccc)); color: #666; /* @include single-box-shadow (#333333, 0, -2px, 3px); */ border:1px solid rgba(0,0,0,0.3); border-bottom: none;}
+.x-tab-active+.x-tab { border-left:none !important;}
+#tab-bar { background: #6e6e6e; border: none;@include single-box-shadow (#333333, 0, 0, 3px, 1px, inset);}
+img.explore { background: url(../../../../public/resources/images/icon_w_1.png) no-repeat; width: 24px; height: 19px;}
+
+.x-tab span.x-button-label {background: url(../../../../public/resources/images/icon_w_1.png) no-repeat center 3px; -webkit-background-size:20px 16px; font-size: 11px !important; padding-top: 20px; }
+.x-tab.x-tab-active span.x-button-label { background-image: url(../../../../public/resources/images/icon_b_1.png)}
+
+.x-tab:nth-child(2) span.x-button-label {background-image: url(../../../../public/resources/images/icon_w_2.png)}
+.x-tab:nth-child(2).x-tab-active span.x-button-label { background-image: url(../../../../public/resources/images/icon_b_2.png)}
+.x-tab:nth-child(3) span.x-button-label {background-image: url(../../../../public/resources/images/icon_w_3.png)}
+.x-tab:nth-child(3).x-tab-active span.x-button-label { background-image: url(../../../../public/resources/images/icon_b_3.png)}
+/*
+#tab-bar .x-layout-box-inner {  display: table; width: 100%;}
+#tab-bar .x-tab {  display: table-cell !important; text-align: center; vertical-align: middle;}
+*/
+.x-carousel-indicator span { background-color: rgba(255,255,255,0.3) !important;}
+.x-carousel-indicator span.x-carousel-indicator-active { background-color: rgba(255,255,255,0.6) !important;}
