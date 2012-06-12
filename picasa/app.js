@@ -1,5 +1,5 @@
 Ext.application({
-    models: ["Photo"],
+    models: ["Photo","Album"],
 
     controllers: ["test", "Main"],
 

@@ -11,6 +11,14 @@ Ext.define('picasa.model.Photo', {
         mapping:'title.$t'
       },
       {
+        name:'link',
+        mapping:'link[0].href'
+      },
+      {
+        name:'date',
+        mapping:'published.$t'
+      },
+      {
         name:'mediaThumbnail',
         mapping:'media$group.media$thumbnail[0]'
       },
@@ -21,7 +29,7 @@ Ext.define('picasa.model.Photo', {
     ],
     proxy:{
       type:'scripttag',
-      url:'http://picasaweb.google.com/data/feed/api/featured?kind=photo&alt=json-in-script&start-index=1&max-results=8&thumbsize=72c&imgmax=512',
+      url:'http://picasaweb.google.com/data/feed/api/user/thayashing?kind=album&alt=json-in-script&thumbsize=90c&imgmax=512',
       reader:{
         root:'feed.entry',
         type:'json',
