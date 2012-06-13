@@ -1,4 +1,4 @@
-Ext.define('picasa.model.Photo', {
+Ext.define('picasa.model.Album', {
   extend:'Ext.data.Model',
   config:{
     fields:[
