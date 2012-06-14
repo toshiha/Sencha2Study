@@ -4,12 +4,55 @@ Ext.define("picasa.view.TileViewPanel", {
   requires:[
     //'Ext.TitleBar'
   ],
-  config:{
+  initialize:function () {
+    this.callParent(arguments);
+//    this.store = new Ext.data.Store({
+//      autoLoad : true,
+//      model : 'Photo'
+//    });
+//    this.xtpl = new Ext.XTemplate('<div class="titleBox"><h2>Featured</h2></div>', '<div class="imageContainer">', '<tpl for=".">', '<div class="thumb-wrap">', '<img src="{mediaThumbnail.url}" title="{title}" width="67">', '</div>', '</tpl>', '</div>', '<div class="x-clear"></div>');
+//    //Album表示用テンプレート
+//    this.albumxtpl = new Ext.XTemplate('<div class="albumContainer">', '<tpl for=".">', '<div class="album-wrap"><div class="album-wrap-inner">', '<img src="{mediaThumbnail.url}" title="{title}" width="83">', '</div><span class="title">{title}</span></div>', '</tpl>', '</div>', '<div class="x-clear"></div>');
+    //Feature表示用データビューの定義
+//    this.dataView = Ext.create('Ext.DataView', {
+//      store:this.store,
+//      tpl:this.xtpl,
+//      itemSelector:'div.thumb-wrap',
+//      emptyText:'No images to display',
+//      scroll:'vertical'
+//    });
+    this.dataView = Ext.create('Ext.DataView', {
 
+      cls: 'twitterView',
+      store: {
+        autoLoad: true,
+        fields: ['from_user', 'text', 'profile_image_url'],
+
+        proxy: {
+          type: 'jsonp',
+          url: 'http://search.twitter.com/search.json?q=Sencha Touch',
+
+          reader: {
+            type: 'json',
+            rootProperty: 'results'
+          }
+        }
+      },
+
+      itemTpl: '<img src="{profile_image_url}" /><h2>{from_user}</h2><p>{text}</p><div style="clear: both"></div>'
+    });
+  },
+  config:{
+    tabBar:{
+      //id:'tab-bar',
+      layout:{
+        pack:'center'
+      }
+    },
     items:[
       {
         xtype:'toolbar',
-        dock:'top',
+        docked:'top',
         itemId:'picasaToolbar',
         title:'My Picasa',
         items:[
@@ -34,41 +77,13 @@ Ext.define("picasa.view.TileViewPanel", {
           }
         ]
       },
-      {
-        title:'Welcome',
-        iconCls:'home',
+      this.dataView,
 
-        styleHtmlContent:true,
-        scrollable:true,
-
-        items:{
-          docked:'top',
-          xtype:'titlebar',
-          title:'Welcome to Sencha Touch 2'
-        },
-
-        html:[
-          "You've just generated a new Sencha Touch 2 project. What you're looking at right now is the ",
-          "contents of <a target='_blank' href=\"app/view/Main.js\">app/view/Main.js</a> - edit that file ",
-          "and refresh to change what's rendered here."
-        ].join("")
-      },
       {
         title:'Get Started',
         iconCls:'action',
 
-        items:[
-          {
-            docked:'top',
-            xtype:'titlebar',
-            title:'Getting Started'
-          },
-          {
-            xtype:'video',
-            url:'http://av.vimeo.com/64284/137/87347327.mp4?token=1330978144_f9b698fea38cd408d52a2393240c896c',
-            posterUrl:'http://b.vimeocdn.com/ts/261/062/261062119_640.jpg'
-          }
-        ]
+        html:'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
       }
     ]
   }

@@ -1,7 +1,7 @@
 Ext.application({
   models:["Photo", "Album"],
   controllers:["Home"],
-  store:['Feature'],
+  store:['FeaturePhoto'],
   views:['TileViewPanel'],
   name:'picasa',
 
@@ -31,7 +31,7 @@ Ext.application({
   launch:function () {
     // Destroy the #appLoadingIndicator element
     Ext.fly('appLoadingIndicator').destroy();
-
+    //Ext.create('picasa.view.TileViewPanel');
     // Initialize the main view
     // Ext.Viewport.add(Ext.create('picasa.view.Main'));
   }
