@@ -41,6 +41,14 @@ Ext.define("picasa.view.TileViewPanel", {
 
       itemTpl: '<img src="{profile_image_url}" /><h2>{from_user}</h2><p>{text}</p><div style="clear: both"></div>'
     });
+    this.items = [this.dataView, {
+      cls : 'following',
+      title : 'Following',
+      //iconCls: 'following',
+      styleHtmlContent : true,
+      html : '<div class="following">No Items Found.<br> Click refresh button to re-sync.</div>'
+    }];
+
   },
   config:{
     tabBar:{
@@ -48,43 +56,43 @@ Ext.define("picasa.view.TileViewPanel", {
       layout:{
         pack:'center'
       }
-    },
-    items:[
-      {
-        xtype:'toolbar',
-        docked:'top',
-        itemId:'picasaToolbar',
-        title:'My Picasa',
-        items:[
-          {
-            xtype:'spacer'
-          },
-          {
-            itemId:'refreshButton',
-            iconCls:'refresh',
-            iconMask:true,
-            handler:function () {
-              /*
-               if (_self.getActiveItem() == _self.dataView) {
-               console.log('dataview');
-               _self.store.load();
-               } else if (_self.getActiveItem() == _self.albumDataView) {
-               console.log('albumDataView');
-               _self.albumStore.load();
-               }
-               */
-            }
-          }
-        ]
-      },
-      this.dataView,
-
-      {
-        title:'Get Started',
-        iconCls:'action',
-
-        html:'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-      }
-    ]
+    }
+//    items:[
+////      {
+////        xtype:'toolbar',
+////        docked:'top',
+////        itemId:'picasaToolbar',
+////        title:'My Picasa',
+////        items:[
+////          {
+////            xtype:'spacer'
+////          },
+////          {
+////            itemId:'refreshButton',
+////            iconCls:'refresh',
+////            iconMask:true,
+////            handler:function () {
+////              /*
+////               if (_self.getActiveItem() == _self.dataView) {
+////               console.log('dataview');
+////               _self.store.load();
+////               } else if (_self.getActiveItem() == _self.albumDataView) {
+////               console.log('albumDataView');
+////               _self.albumStore.load();
+////               }
+////               */
+////            }
+////          }
+////        ]
+////      },
+////      this.dataView,
+////
+////      {
+////        title:'Get Started',
+////        iconCls:'action',
+////
+////        html:'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
+////      }
+//    ]
   }
 });

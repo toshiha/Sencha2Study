@@ -1,7 +1,7 @@
 Ext.application({
   models:["Photo", "Album"],
   controllers:["Home"],
-  store:['FeaturePhoto'],
+  stores:['FeaturePhoto'],
   views:['TileViewPanel'],
   name:'picasa',
 

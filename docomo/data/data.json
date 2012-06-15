@@ -1,0 +1,199 @@
+{
+	groups: [{
+		group: 'Group A',
+		countries: [{
+			name: '韓国'
+		},{
+			name: 'イラン'
+		},{
+			name: 'カタール'
+		},{
+			name: 'ウズベキスタン'
+		},{
+			name: 'レバノン'
+		}],
+		matches: [{
+			date: '2012/06/03',
+			home: 'ウズベキスタン',
+			visitor: 'イラン',
+			score: '0-1'
+		},{
+			date: '2012/06/03',
+			home: 'レバノン',
+			visitor: 'カタール',
+			score: '0-1'
+		},{
+			date: '2012/06/08',
+			home: 'レバノン',
+			visitor: 'ウズベキスタン',
+			score: '1-1'
+		},{
+			date: '2012/06/08',
+			home: 'カタール',
+			visitor: '韓国',
+			score: '1-4'
+		},{
+			date: '2012/06/12',
+			home: 'イラン',
+			visitor: 'カタール',
+			score: '0-0'
+		},{
+			date: '2012/06/12',
+			home: '韓国',
+			visitor: 'レバノン',
+			score: '3-0'
+		},{
+			date: '2012/09/11',
+			home: 'レバノン',
+			visitor: 'イラン'
+		},{
+			date: '2012/10/16',
+			home: 'イラン',
+			visitor: '韓国'
+		},{
+			date: '2012/10/16',
+			home: 'カタール',
+			visitor: 'ウズベキスタン'
+		},{
+			date: '2012/11/14',
+			home: 'カタール',
+			visitor: 'レバノン'
+		},{
+			date: '2012/11/14',
+			home: 'イラン',
+			visitor: 'ウズベキスタン'
+		},{
+			date: '2013/03/26',
+			home: 'ウズベキスタン',
+			visitor: 'レバノン'
+		},{
+			date: '2013/03/26',
+			home: '韓国',
+			visitor: 'カタール'
+		},{
+			date: '2013/06/04',
+			home: 'カタール',
+			visitor: 'イラン'
+		},{
+			date: '2013/06/04',
+			home: 'レバノン',
+			visitor: '韓国'
+		},{
+			date: '2013/06/11',
+			home: 'イラン',
+			visitor: 'レバノン'
+		},{
+			date: '2013/06/11',
+			home: '韓国',
+			visitor: 'ウズベキスタン'
+		},{
+			date: '2013/06/18',
+			home: '韓国',
+			visitor: 'イラン'
+		},{
+			date: '2013/06/18',
+			home: 'ウズベキスタン',
+			visitor: 'カタール'
+		}]
+	},{
+		group: 'Group B',
+		countries: [{
+			name: '日本'
+		},{
+			name: 'イラク'
+		},{
+			name: 'オーストラリア'
+		},{
+			name: 'オマーン'
+		},{
+			name: 'レバノン'
+		}],
+		matches: [{
+			date: '2012/06/03',
+			home: 'ヨルダン',
+			visitor: 'イラク',
+			score: '1-1'
+		},{
+			date: '2012/06/03',
+			home: '日本',
+			visitor: 'オマーン',
+			score: '3-0'
+		},{
+			date: '2012/06/08',
+			home: 'オマーン',
+			visitor: 'オーストラリア',
+			score: '0-0'
+		},{
+			date: '2012/06/08',
+			home: '日本',
+			visitor: 'ヨルダン',
+			score: '6-0'
+		},{
+			date: '2012/06/12',
+			home: 'イラク',
+			visitor: 'オマーン',
+			score: '1-1'
+		},{
+			date: '2012/06/12',
+			home: 'オーストラリア',
+			visitor: '日本',
+			score: '1-1'
+		},{
+			date: '2012/09/11',
+			home: 'ヨルダン',
+			visitor: 'オーストラリア'
+		},{
+			date: '2012/09/11',
+			home: '日本',
+			visitor: 'イラク'
+		},{
+			date: '2012/10/16',
+			home: 'イラク',
+			visitor: 'オーストラリア'
+		},{
+			date: '2012/10/16',
+			home: 'オマーン',
+			visitor: 'ヨルダン'
+		},{
+			date: '2012/11/14',
+			home: 'イラク',
+			visitor: 'ヨルダン'
+		},{
+			date: '2012/11/14',
+			home: 'オマーン',
+			visitor: '日本'
+		},{
+			date: '2013/03/26',
+			home: 'ヨルダン',
+			visitor: '日本'
+		},{
+			date: '2013/03/26',
+			home: 'オーストラリア',
+			visitor: 'オマーン'
+		},{
+			date: '2013/06/04',
+			home: '日本',
+			visitor: 'オーストラリア'
+		},{
+			date: '2013/06/04',
+			home: 'オマーン',
+			visitor: 'イラク'
+		},{
+			date: '2013/06/11',
+			home: 'オーストラリア',
+			visitor: 'ヨルダン'
+		},{
+			date: '2013/06/11',
+			home: 'イラク',
+			visitor: '日本'
+		},{
+			date: '2013/06/18',
+			home: 'ヨルダン',
+			visitor: 'オマーン'
+		},{
+			date: '2013/06/18',
+			home: 'オーストラリア',
+			visitor: 'イラク'
+		}]
+	}]
+}

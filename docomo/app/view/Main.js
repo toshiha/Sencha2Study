@@ -1,0 +1,23 @@
+Ext.define("docomo.view.Main", {
+  extend:'Ext.tab.Panel',
+  xtype:'mainview',
+  requires:[
+    'docomo.view.TweetList',
+    'docomo.view.GroupView'
+  ],
+  config:{
+    tabBarPosition:'bottom',
+    items:[
+      {
+        title:'Group',
+        xtype:'groupview',
+        iconCls:'home'
+      },
+      {
+        title:'Twitter',
+        iconCls:'info',
+        xtype:'tweetlist'
+      }
+    ]
+  }
+});
