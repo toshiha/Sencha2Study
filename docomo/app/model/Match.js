@@ -1,10 +1,20 @@
-Ext.define('docomo.model.Group', {
+Ext.define('docomo.model.Match', {
   extend:'Ext.data.Model',
   config:{
     fields:[
       {
-        name:'name',
-        type:'string'
+        name:'date',
+        type:'date',
+        dateFormat:'Y/m/d'
+      },
+      {
+        name:'home'
+      },
+      {
+        name:'visitor'
+      },
+      {
+        name:'score'
       }
     ]
   }

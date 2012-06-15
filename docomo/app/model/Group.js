@@ -1,14 +1,24 @@
-Ext.define('docomo.model.Tweet', {
+Ext.define('docomo.model.Group', {
   extend:'Ext.data.Model',
+  requires:[
+    'docomo.model.Country',
+    'docomo.model.Match'
+  ],
   config:{
     fields:[
       {
-        name:'text',
+        name:'group',
         type:'string'
+      }
+    ],
+    hasMany:[
+      {
+        associationKey:'countries',
+        model:'docomo.model.Country'
       },
       {
-        name:'created_at',
-        type:'date'
+        associationKey:'matches',
+        model:'docomo.model.Match'
       }
     ]
   }

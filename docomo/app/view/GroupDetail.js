@@ -1,10 +1,17 @@
-Ext.define("docomo.view.MatchList", {
-  extend:'Ext.dataview.List',
-  xtype:'matchlist',
+Ext.define("docomo.view.GroupDetail", {
+  extend:'Ext.tab.Panel',
+  xtype:'groupdetail',
   requires:[
-    'Ext.dataview.List'
   ],
   config:{
-    itemTpl:'<div><span class="match">{home} - {visitor}</span><span class="location">@{home}</span><tpl if="score"><span class="match-score">{score}</span></div>'
+    items:[
+      {xtype:'countrylist', title:'国'},
+      {xtype:'matchlist', title:'日程'}
+    ]
+  },
+  initialize:function() {
+    this.callParent(arguments);
+    //this.down('countrylist').setStore(this.stores.countries);
+    //this.down('matchlist').setStore(this.stores.matches);
   }
 });

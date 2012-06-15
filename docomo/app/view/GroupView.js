@@ -1,25 +1,17 @@
-Ext.define("docomo.view.Main", {
-  extend:'Ext.tab.Panel',
-  xtype:'mainview',
+Ext.define("docomo.view.GroupView", {
+  extend:'Ext.navigation.View',
+  xtype:'groupview',
   requires:[
-    'Ext.TitleBar',
-    'Ext.Video',
-    'docomo.view.TweetList'
+    'Ext.dataview.List'
   ],
   config:{
-    tabBarPosition:'bottom',
     items:[
       {
-        title:'Group',
+        title:'アジア最終予選',
         xtype:'list',
         store:'Groups',
         itemTpl:'<div><span class="group">{group}</span></div>',
         iconCls:'home'
-      },
-      {
-        title:'Twitter',
-        iconCls:'info',
-        xtype:'tweetlist'
       }
     ]
   }

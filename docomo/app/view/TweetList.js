@@ -1,26 +1,35 @@
-Ext.define("docomo.view.Main", {
-  extend:'Ext.tab.Panel',
-  xtype:'mainview',
+Ext.define("docomo.view.TweetList", {
+  extend:'Ext.Container',
+  xtype:'tweetlist',
   requires:[
-    'Ext.TitleBar',
-    'Ext.Video'
+    'Ext.dataview.List',
+    'Ext.field.Search',
+    'Ext.Button'
   ],
   config:{
+    layout:'fit',
     tabBarPosition:'bottom',
     items:[
       {
-        title:'Group',
-        iconCls:'home',
-        html:[
-          "ダミー1"
-        ].join("")
+        xtype:'toolbar',
+        docked:'top',
+        items:[
+          {
+            xtype:'searchfield',
+            placeHolder:'search'
+          },
+          {
+            xtype:'button',
+            iconCls:'refresh',
+            iconMask:true,
+            ui:'plain'
+          }
+        ]
       },
       {
-        title:'Twitter',
-        iconCls:'info',
-        html:[
-          "ダミー2"
-        ].join("")
+        xtype:'list',
+        store:'Tweets',
+        itemTpl:'<div><span class="text">{text}</span><span class="date">{created_at:date("Y/m/d")}</span> </div>'
       }
     ]
   }

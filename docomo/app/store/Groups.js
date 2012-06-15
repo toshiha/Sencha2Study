@@ -1,13 +1,14 @@
-Ext.define('docomo.store.Tweets',{
+Ext.define('docomo.store.Groups',{
   extend :'Ext.data.Store',
-  requires:['docomo.model.Tweet'],
+  requires:['docomo.model.Group'],
   config:{
-    model:'docomo.model.Tweet',
+    model:'docomo.model.Group',
+    autoLoad:true,
     proxy:{
-      type:'jsonp',
-      url:'http://search.twitter.com/search.json',
+      type:'ajax',
+      url:'./data/data.json',
       reader:{
-        rootProperty:'results',
+        rootProperty:'groups',
         type:'json'
       }
     }

@@ -1,24 +1,10 @@
-Ext.define('docomo.model.Group', {
+Ext.define('docomo.model.Country', {
   extend:'Ext.data.Model',
-  requires:[
-    'docomo.model.Country',
-    'docomo.model.Match'
-  ],
   config:{
     fields:[
       {
-        name:'group',
+        name:'name',
         type:'string'
-      }
-    ],
-    hasMany:[
-      {
-        associationKey:'countries',
-        model:'docomo.model.Country'
-      },
-      {
-        associationKey:'matches',
-        model:'docomo.model.Match'
       }
     ]
   }

@@ -1,18 +1,14 @@
-Ext.define('docomo.controller.Tweets', {
+Ext.define('docomo.controller.Groups', {
   extend:'Ext.app.Controller',
 
   config:{
     refs:{
-      tweetsearch:'tweetlist searchfield',
-      reloadbutton:'tweetlist button',
-      tweetlist:'list'
+      grouplist:'groupview list',
+      groupview:'groupview'
     },
     control:{
-      tweetsearch:{
-        action:'onTweetSearch'
-      },
-      reloadbutton:{
-        tap:'onReload'
+      grouplist:{
+        itemtap:'onGroupSelect'
       }
     }
     /*
@@ -21,17 +17,20 @@ Ext.define('docomo.controller.Tweets', {
      }
      */
   },
-  onTweetSearch:function (a) {
-    var query = this.getTweetsearch().getValue();
-    if(query) {
-      var store = Ext.getStore('Tweets');
-      store.load({
-         params:{q:query}
+  onGroupSelect:function () {
+    var rec = arguments[3];
+    console.log(rec);
+    if(rec) {
+      this.getGroupview().push({
+        xtype:'groupdetail' ,
+        title:rec.get('group'),
+        stores:{
+          countries: rec.countries(),
+          matches:rec.matches()
+        }
       })
     }
-  },
-  onReload:function () {
-    this.onTweetSearch();
+
   },
   //called when the Application is launched, remove if not needed
   launch:function (app) {
