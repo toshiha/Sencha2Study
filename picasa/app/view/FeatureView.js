@@ -1,27 +1,41 @@
-Ext.define("picasa.view.FeatureList", {
-  extend:'Ext.DataView',
-  xtype:'featurelist',
+Ext.define("picasa.view.FeatureView", {
+  extend:'Ext.navigation.View',
+  xtype:'featureview',
   requires:[
   ],
-  config: {
-    tpl:Ext.XTemplate('<div class="titleBox"><h2>Featured</h2></div>', '<div class="imageContainer">', '<tpl for=".">', '<div class="thumb-wrap">', '<img src="{mediaThumbnail.url}" title="{title}" width="67">', '</div>', '</tpl>', '</div>', '<div class="x-clear"></div>'),
-    //itemTpl:'<div class="thumb-wrap"><img src="{mediaThumbnail.url}" title="{title}" width="67"></div>',
-    store:'PhotosFeature',
-    emptyText:'No images to display'
+  config:{
+    navigationBar:false,
+    items:[
+      {
+        items:[
+          {
+            html:'<h2>Featured</h2>',
+            styleHtmlContent : true
+          },
+          {
+            xtype:'featurelist',
+            height:'300px',
+            styleHtmlContent : true
+          },
+          {
+            html:'<h2>Popular</h2>',
+            styleHtmlContent : true
+          },
+          {
+            xtype:'searchfield',
+            placeHolder:'search',
+            styleHtmlContent : true
+          },
+          {
+            html:'<span>italy</span><span>new</span><span>flowers</span><span>pics</span><span>newyork</span>',
+            styleHtmlContent : true
+          }
+        ]
+      }
+    ]
   },
 
   initialize:function () {
-    //this.tpl = new Ext.XTemplate('<div class="titleBox"><h2>Featured</h2></div>', '<div class="imageContainer">', '<tpl for=".">', '<div class="thumb-wrap">', '<img src="{mediaThumbnail.url}" title="{title}" width="67">', '</div>', '</tpl>', '</div>', '<div class="x-clear"></div>');
     this.callParent(arguments);
-    var _self = this;
-    var store = Ext.getStore('PhotosFeature');
-    store.load({
-      callback: function(records, operation, success) {
-        // the operation object contains all of the details of the load operation
-        //_self.tpl.apply(records);
-        console.log(_self.tpl);
-      },
-      scope: this
-    });
   }
 });
