@@ -3,7 +3,7 @@ Ext.define('docomo.controller.Groups', {
 
   config:{
     refs:{
-      grouplist:'groupview list',
+      grouplist:'groupview > list',
       groupview:'groupview'
     },
     control:{
@@ -19,11 +19,12 @@ Ext.define('docomo.controller.Groups', {
   },
   onGroupSelect:function () {
     var rec = arguments[3];
-    console.log(rec);
+    //console.log(arguments);
     if(rec) {
       this.getGroupview().push({
         xtype:'groupdetail' ,
         title:rec.get('group'),
+        //console.log(rec.countries());
         stores:{
           countries: rec.countries(),
           matches:rec.matches()

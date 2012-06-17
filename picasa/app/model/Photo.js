@@ -1,3 +1,6 @@
+//Photoモデルのクラス定義
+//field名は$や-が使えないのでmappingを使う
+//Featureと個人のアルバムは構造が同じなので共有
 Ext.define('picasa.model.Photo', {
   extend:'Ext.data.Model',
   config:{
@@ -19,14 +22,5 @@ Ext.define('picasa.model.Photo', {
         mapping:'media$group.media$content[0]'
       }
     ]
-  },
-  proxy : {
-    type : 'jsonp',
-    url : 'http://picasaweb.google.com/data/feed/api/featured?kind=photo&alt=json-in-script&start-index=1&max-results=8&thumbsize=72c&imgmax=512',
-    reader : {
-      root : 'feed.entry',
-      type : 'json',
-      idProperty : 'id.$t'
-    }
   }
 });

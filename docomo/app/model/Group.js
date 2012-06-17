@@ -13,12 +13,14 @@ Ext.define('docomo.model.Group', {
     ],
     hasMany:[
       {
-        associationKey:'countries',
-        model:'docomo.model.Country'
+        //associationKey:'countries',
+        model:'docomo.model.Country',
+        name: 'countries'
       },
       {
-        associationKey:'matches',
-        model:'docomo.model.Match'
+        //associationKey:'matches',
+        model:'docomo.model.Match',
+        name:'matches'
       }
     ]
   }

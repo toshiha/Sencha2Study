@@ -15,9 +15,9 @@ Ext.define('picasa.controller.Home', {
 
   //called when the Application is launched, remove if not needed
   launch:function (app) {
-    //this.redirectTo('index');
+    this.redirectTo('index');
   },
   index:function () {
-    //Ext.Viewport.add(Ext.create('picasa.view.Main'));
+    Ext.Viewport.add(Ext.create('picasa.view.Main'));
   }
 });

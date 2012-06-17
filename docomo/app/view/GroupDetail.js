@@ -11,7 +11,7 @@ Ext.define("docomo.view.GroupDetail", {
   },
   initialize:function() {
     this.callParent(arguments);
-    //this.down('countrylist').setStore(this.stores.countries);
-    //this.down('matchlist').setStore(this.stores.matches);
+    this.down('countrylist').setStore(this.stores.countries);
+    this.down('matchlist').setStore(this.stores.matches);
   }
 });

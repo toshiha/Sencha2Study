@@ -5,6 +5,6 @@ Ext.define("docomo.view.MatchList", {
     'Ext.dataview.List'
   ],
   config:{
-    itemTpl:'<div><span class="match">{home} - {visitor}</span><span class="location">@{home}</span><tpl if="score"><span class="match-score">{score}</span></div>'
+    itemTpl:'<div><span class="match">{home} - {visitor}</span><span class="location">@{home}</span><tpl if="score"><span class="match-score">{score}</span></tpl></div>'
   }
 });
