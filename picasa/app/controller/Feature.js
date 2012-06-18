@@ -6,7 +6,8 @@ Ext.define('picasa.controller.Feature', {
       featurelist:'featurelist',
       featureview:'featureview',
       mainview:'mainview',
-      mainviewbutton:'mainview button[action=next]'
+      mainviewbutton:'mainview button[action=next]',
+      refreshbutton:'mainview button[action=reload]'
     },
     control:{
       featurelist:{
@@ -14,6 +15,13 @@ Ext.define('picasa.controller.Feature', {
       },
       mainviewbutton:{
         tap:'onMainClick'
+      },
+      refreshbutton:{
+        tap:'onReload'
+      },
+      mainview: {
+        push:'onPush',
+        pop:'onPop'
       }
     },
     routes:{
@@ -57,6 +65,7 @@ Ext.define('picasa.controller.Feature', {
   launch:function (app) {
     //this.redirectTo('index');
     Ext.Viewport.add(Ext.create('picasa.view.Main'));
+    this.firstView = this.getMainview().getActiveItem();
   },
   index:function () {
     var stack = this.getStack();
@@ -97,6 +106,9 @@ Ext.define('picasa.controller.Feature', {
     this.getMainview().push({
       //this one also has a title
       title:'Second View',
+      navigationBar:{
+        items:[]
+      },
 
       //once again, this view has one button
       items:[
@@ -106,5 +118,24 @@ Ext.define('picasa.controller.Feature', {
         }
       ]
     });
+  },
+  onReload:function () {
+    console.log('rrrrrrr');
+    console.log(this.getMainview().items.length);
+    if(this.firstView === this.getMainview().getActiveItem()) {
+      console.log("firstview");
+    } else {
+      console.log("otherview");
+    }
+  },
+  onPush:function () {
+    console.log("push");
+    //this.getRefreshbutton().setHidden(true);
+  },
+  onPop:function () {
+    console.log("pop");
+    console.log(this.getMainview().items.length);
+    //this.getRefreshbutton().setHidden(false);
+
   }
 });

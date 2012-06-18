@@ -8,12 +8,10 @@ Ext.define("picasa.view.Main", {
    navigationBar:{
       items:[
         {
-          xtype:'spacer',
-        },
-
-        {
           xtype:'button',
+          action:'reload',
           iconCls:'refresh',
+          itemId:'refreshButton',
           iconMask:true,
           ui:'plain',
           align: 'right'
