@@ -1,40 +1,61 @@
 Ext.define("picasa.view.Main", {
-  extend:'Ext.tab.Panel',
+  extend:'Ext.navigation.View',
+  xtype:'mainview',
   requires:[
   ],
   config:{
     tabBarPosition:'top',
+   navigationBar:{
+      items:[
+        {
+          xtype:'spacer',
+        },
+
+        {
+          xtype:'button',
+          iconCls:'refresh',
+          iconMask:true,
+          ui:'plain',
+          align: 'right'
+        }
+     ]
+    },
     items:[
       {
-        xtype:'toolbar',
-        docked:'top',
-        itemId:'picasaToolbar',
+        //items can have titles
         title:'My Picasa',
-        items:[
-          {
-            xtype:'spacer'
-          },
-          {
-            itemId:'refreshButton',
-            iconCls:'refresh',
-            iconMask:true,
-            ui:'plain'
-          }
-        ]
-      },
-      {
-        title:'Featured',
-        xtype:'featureview'
-      },
-      {
-        title:'Album',
+        padding:10,
 
+        //inside this first item we are going to add a button
         items:[
           {
-            html:'hhhhhhhh'
+            xtype:'button',
+            action:'next',
+            text:'Push another view!'
+//            handler:function () {
+//              //when someone taps this button, it will push another view into stack
+//              Ext.Viewport.items[0].push({
+//                //this one also has a title
+//                title:'Second View',
+//                padding:10,
+//
+//                //once again, this view has one button
+//                items:[
+//                  {
+//                    xtype:'button',
+//                    text:'Pop this view!',
+//                    handler:function () {
+//                      //and when you press this button, it will pop the current view (this) out of the stack
+//                      Ext.Viewport.pop();
+//                    }
+//                  }
+//                ]
+//              });
+            //}
           }
         ]
       }
     ]
+
   }
 });
