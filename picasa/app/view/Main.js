@@ -1,11 +1,13 @@
 Ext.define("picasa.view.Main", {
+  //extend:'Ext.Container',
   extend:'Ext.navigation.View',
   xtype:'mainview',
+  //layout:'fit',
   requires:[
   ],
   config:{
     tabBarPosition:'top',
-   navigationBar:{
+    navigationBar:{
       items:[
         {
           xtype:'button',
@@ -14,42 +16,24 @@ Ext.define("picasa.view.Main", {
           itemId:'refreshButton',
           iconMask:true,
           ui:'plain',
-          align: 'right'
+          align:'right'
         }
-     ]
+      ]
     },
     items:[
       {
-        //items can have titles
+        xtype:'tabpanel',
         title:'My Picasa',
-        padding:10,
-
-        //inside this first item we are going to add a button
         items:[
           {
-            xtype:'button',
-            action:'next',
-            text:'Push another view!'
-//            handler:function () {
-//              //when someone taps this button, it will push another view into stack
-//              Ext.Viewport.items[0].push({
-//                //this one also has a title
-//                title:'Second View',
-//                padding:10,
-//
-//                //once again, this view has one button
-//                items:[
-//                  {
-//                    xtype:'button',
-//                    text:'Pop this view!',
-//                    handler:function () {
-//                      //and when you press this button, it will pop the current view (this) out of the stack
-//                      Ext.Viewport.pop();
-//                    }
-//                  }
-//                ]
-//              });
-            //}
+            title:'Featured',
+            xtype:'featureview'
+          },
+          {
+            cls:'following',
+            title:'Following',
+            styleHtmlContent:true,
+            html:'<div class="following">No Items Found.<br> Click refresh button to re-sync.</div>'
           }
         ]
       }
