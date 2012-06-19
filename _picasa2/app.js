@@ -1,6 +1,6 @@
 Ext.application({
   models:["Photo", "Album"],
-  controllers:["Feature"],
+  controllers:["Main"],
   stores:['PhotosFeature'],
   views:['Main', 'FeatureView', 'FeatureList'],
   name:'picasa',
@@ -8,7 +8,6 @@ Ext.application({
   requires:[
     /*'Ext.MessageBox'*/
   ],
-
 
   icon:{
     '57':'resources/icons/Icon.png',
