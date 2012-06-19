@@ -1,4 +1,4 @@
-Ext.define("picasa.view.Detail", {
+Ext.define("picasa.view.DetailView", {
   extend:'Ext.carousel.Carousel',
   xtype:'detailview',
   requires:[

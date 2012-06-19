@@ -1,6 +1,6 @@
-Ext.define("picasa.view.FeatureView", {
+Ext.define("picasa.view.ExploreView", {
   extend:'Ext.Container',
-  xtype:'featureview',
+  xtype:'exploreview',
   requires:[
   ],
   config:{

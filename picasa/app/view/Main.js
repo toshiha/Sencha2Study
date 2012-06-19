@@ -24,16 +24,26 @@ Ext.define("picasa.view.Main", {
       {
         xtype:'tabpanel',
         title:'My Picasa',
+        tabBar:{
+          layout : {
+            pack : 'center'
+          }
+        },
         items:[
           {
-            title:'Featured',
-            xtype:'featureview'
+            title:'Explore',
+            xtype:'exploreview'
           },
           {
-            cls:'following',
             title:'Following',
+            cls:'following',
             styleHtmlContent:true,
             html:'<div class="following">No Items Found.<br> Click refresh button to re-sync.</div>'
+          },
+          {
+            title:'Albums',
+            xtype:'albumview',
+            cls:'albums'
           }
         ]
       }

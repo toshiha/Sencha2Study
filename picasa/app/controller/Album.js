@@ -1,19 +1,14 @@
-Ext.define('picasa.controller.Main', {
+Ext.define('picasa.controller.Album', {
   extend:'Ext.app.Controller',
 
   config:{
     refs:{
       mainview:'mainview',
-      exploreview:'exploreview',
-      featurephoto:'featurephoto',
-      refreshbutton:'mainview button[action=reload]'
+      albumview:'albumview'
     },
     control:{
-      featurephoto:{
-        itemtap:'onFeatureSelect'
-      },
-      refreshbutton:{
-        tap:'onReload'
+      albumview:{
+        itemtap:'onAlbumSelect'
       },
       mainview:{
         push:'onPush',
@@ -22,11 +17,9 @@ Ext.define('picasa.controller.Main', {
     }
   },
   launch:function (app) {
-    //this.redirectTo('index');
-    Ext.Viewport.add(Ext.create('picasa.view.Main'));
     this.firstView = this.getMainview().getActiveItem();
   },
-  onFeatureSelect:function () {
+  onAlbumSelect:function () {
     var index = arguments[1];
     var store = Ext.getStore('PhotosFeature');
     var photodata = store.data.items;
@@ -45,14 +38,6 @@ Ext.define('picasa.controller.Main', {
     }
     carousel.setActiveItem(index);
     this.getMainview().push(carousel);
-  },
-  onReload:function () {
-    console.log(this.getMainview().items.length);
-    if (this.firstView === this.getMainview().getActiveItem()) {
-      console.log("firstview");
-    } else {
-      console.log("otherview");
-    }
   },
   onPush:function () {
     //console.log("push");
