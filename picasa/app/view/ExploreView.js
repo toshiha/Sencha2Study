@@ -30,10 +30,6 @@ Ext.define("picasa.view.ExploreView", {
         placeHolder:'search',
         styleHtmlContent:true
       },
-//      {
-//        html:'<span class="popTag">italy</span><span class="popTag">new</span><span class="popTag">flowers</span><span class="popTag">pics</span><span class="popTag">newyork</span>',
-//        styleHtmlContent:true
-//      },
       {
         scrollable:false,
 //        layout: {

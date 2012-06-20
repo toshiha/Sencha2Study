@@ -26,6 +26,7 @@ Ext.define('picasa.controller.Search', {
     this.tempTitle = 'Result of "' + query + '"';
     if(query) {
       var store = Ext.getStore('PhotosSearch');
+      store.removeAll();
       store.load({
         params:{q:query}
       });
