@@ -4,7 +4,8 @@ Ext.define('picasa.controller.Album', {
   config:{
     refs:{
       mainview:'mainview',
-      albumview:'albumview'
+      albumview:'albumview',
+      refreshbutton:'mainview button[action=reload]'
     },
     control:{
       albumview:{
@@ -21,23 +22,13 @@ Ext.define('picasa.controller.Album', {
   },
   onAlbumSelect:function () {
     var index = arguments[1];
-    var store = Ext.getStore('PhotosFeature');
-    var photodata = store.data.items;
-    var carousel = Ext.create('picasa.view.DetailView', {
-      fullscreen:true,
-      defaults:{
-        styleHtmlContent:true
-      }
+    var store = Ext.getStore('Albums');
+    var albumurl = store.data.items[index].data.link + '&thumbsize=72c&imgmax=512';
+    console.log(albumurl);
+    var album = Ext.create('picasa.view.AlbumEachView', {
+      //store:Ext.create('picasa.store.PhotosAlbum', {proxy:albumurl})
     });
-    for (var i = 0; i < photodata.length; i++) {
-      var _target = photodata[i].data.mediaContent;
-      var _h = Math.floor(_target.height / _target.width * 300);
-      carousel.add({
-        html:'<div class="detailImageContainer"><img class="detailImage" src="' + _target.url + '" width="' + 300 + '" height="' + _h + '"></div>'
-      });
-    }
-    carousel.setActiveItem(index);
-    this.getMainview().push(carousel);
+    this.getMainview().push(album);
   },
   onPush:function () {
     //console.log("push");
