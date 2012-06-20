@@ -1,8 +1,8 @@
 Ext.application({
   models:['Photo', 'Album'],
-  controllers:['Main','Album','Detail'],
-  stores:['PhotosFeature','Albums'],
-  views:['Main', 'ExploreView', 'FeaturePhoto','AlbumView','AlbumEachView','DetailView'],
+  controllers:['Main','Album','Detail','Search'],
+  stores:['PhotosFeature','PhotosSearch','Albums'],
+  views:['Main', 'ExploreView', 'FeaturePhoto','AlbumView','AlbumEachView','DetailView','SearchView'],
   name:'picasa',
 
   requires:[

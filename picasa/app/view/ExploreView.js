@@ -2,7 +2,8 @@ Ext.define("picasa.view.ExploreView", {
   extend:'Ext.Container',
   xtype:'exploreview',
   requires:[
-    'Ext.field.Search'
+    'Ext.field.Search',
+    'picasa.view.TagButton'
   ],
   config:{
     scrollable:{
@@ -29,9 +30,69 @@ Ext.define("picasa.view.ExploreView", {
         placeHolder:'search',
         styleHtmlContent:true
       },
+//      {
+//        html:'<span class="popTag">italy</span><span class="popTag">new</span><span class="popTag">flowers</span><span class="popTag">pics</span><span class="popTag">newyork</span>',
+//        styleHtmlContent:true
+//      },
       {
-        html:'<span>italy</span><span>new</span><span>flowers</span><span>pics</span><span>newyork</span>',
-        styleHtmlContent:true
+        scrollable:false,
+//        layout: {
+//          type: 'hbox',
+//          align: 'start',
+//          pack: 'start'
+//        },
+
+        items:[
+          {
+            xtype:'button',
+            text:'italy',
+            action:'tag',
+            cls:'searchTag',
+            margin:5
+          },
+          {
+            xtype:'button',
+            text:'new',
+            action:'tag',
+            cls:'searchTag',
+            margin:5
+          },
+          {
+            xtype:'button',
+            text:'flowers',
+            action:'tag',
+            cls:'searchTag',
+            margin:5
+          },
+          {
+            xtype:'button',
+            text:'pics',
+            action:'tag',
+            cls:'searchTag',
+            margin:5
+          },
+          {
+            xtype:'button',
+            text:'Jazz',
+            action:'tag',
+            cls:'searchTag',
+            margin:5
+          },
+          {
+            xtype:'button',
+            text:'NewYork',
+            action:'tag',
+            cls:'searchTag',
+            margin:5
+          },
+          {
+            xtype:'button',
+            text:'Cars2',
+            action:'tag',
+            cls:'searchTag',
+            margin:5
+          }
+        ]
       }
     ]
   },

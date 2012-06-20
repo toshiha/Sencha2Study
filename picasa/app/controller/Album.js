@@ -1,6 +1,6 @@
+//Album用コントローラ定義
 Ext.define('picasa.controller.Album', {
   extend:'Ext.app.Controller',
-
   config:{
     refs:{
       mainview:'mainview',
@@ -16,6 +16,7 @@ Ext.define('picasa.controller.Album', {
       }
     }
   },
+  //Albumが選択された時のイベントハンドラ
   onAlbumSelect:function () {
     var index = arguments[1];
     var model = Ext.getStore('Albums').data.items[index].data;
@@ -36,27 +37,20 @@ Ext.define('picasa.controller.Album', {
         }
       }
     });
+    //ナビゲーションビューにビューのプッシュ
     this.getMainview().push(album);
   },
+  //Albumの個々の写真が選択された時のイベントハンドラ
   onAlbumEachSelect:function () {
     var index = arguments[1];
     var store = arguments[0].getStore();
     var photodata = store.data.items;
     var carousel = Ext.create('picasa.view.DetailView', {
       title:'',
-      fullscreen:true,
-      defaults:{
-        styleHtmlContent:true
-      }
+      photoData:photodata,
+      photoIndex:index
     });
-    for (var i = 0; i < photodata.length; i++) {
-      var _target = photodata[i].data.mediaContent;
-      var _h = Math.floor(_target.height / _target.width * 300);
-      carousel.add({
-        html:'<div class="detailImageContainer"><img class="detailImage" src="' + _target.url + '" width="' + 300 + '" height="' + _h + '"></div>'
-      });
-    }
-    carousel.setActiveItem(index);
+    //ナビゲーションビューにビューのプッシュ
     this.getMainview().push(carousel);
   }
 });
