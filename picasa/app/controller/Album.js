@@ -22,11 +22,24 @@ Ext.define('picasa.controller.Album', {
   },
   onAlbumSelect:function () {
     var index = arguments[1];
-    var store = Ext.getStore('Albums');
-    var albumurl = store.data.items[index].data.link + '&thumbsize=72c&imgmax=512';
+    var model = Ext.getStore('Albums').data.items[index].data;
+    var albumurl = model.link + '&thumbsize=72c&imgmax=512';
     console.log(albumurl);
     var album = Ext.create('picasa.view.AlbumEachView', {
-      //store:Ext.create('picasa.store.PhotosAlbum', {proxy:albumurl})
+      title: model.title,
+      store :{
+        model:'picasa.model.Photo',
+        autoLoad:true,
+        proxy:{
+          type:'jsonp',
+          url:albumurl,
+          reader:{
+            rootProperty:'feed.entry',
+            type:'json',
+            idProperty:'id.$t'
+          }
+        }
+      }
     });
     this.getMainview().push(album);
   },
