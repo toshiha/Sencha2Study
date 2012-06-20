@@ -4,6 +4,8 @@ Ext.define("picasa.view.Main", {
   xtype:'mainview',
   //layout:'fit',
   requires:[
+    'Ext.tab.Panel',
+    'Ext.Button'
   ],
   config:{
     tabBarPosition:'top',

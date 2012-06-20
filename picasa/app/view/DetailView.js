@@ -5,7 +5,8 @@ Ext.define("picasa.view.DetailView", {
   ],
   config: {
     indicator : true,
-    fullscreen : true
+    fullscreen : true,
+    styleHtmlContent:true
   },
 
   initialize:function () {

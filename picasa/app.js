@@ -1,12 +1,11 @@
 Ext.application({
   models:['Photo', 'Album'],
   controllers:['Main','Album','Detail'],
-  stores:['PhotosFeature','PhotosAlbum','Albums'],
+  stores:['PhotosFeature','Albums'],
   views:['Main', 'ExploreView', 'FeaturePhoto','AlbumView','AlbumEachView','DetailView'],
   name:'picasa',
 
   requires:[
-    /*'Ext.MessageBox'*/
   ],
 
 //  icon:{

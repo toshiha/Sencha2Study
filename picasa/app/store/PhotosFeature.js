@@ -1,5 +1,8 @@
 Ext.define('picasa.store.PhotosFeature',{
   extend :'Ext.data.Store',
+  requires:[
+    'Ext.data.proxy.JsonP'
+  ],
   config:{
     model:'picasa.model.Photo',
     autoLoad:true,

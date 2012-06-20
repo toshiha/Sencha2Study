@@ -13,7 +13,6 @@ Ext.define('picasa.controller.Detail', {
     }
   },
   onInitialize:function (app) {
-    console.log('init');
     this.startScale = 1;
     this.scale = 1;
     this.detailElm = this.getDetailview().element;

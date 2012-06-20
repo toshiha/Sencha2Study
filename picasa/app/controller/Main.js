@@ -22,7 +22,6 @@ Ext.define('picasa.controller.Main', {
     }
   },
   launch:function (app) {
-    //this.redirectTo('index');
     Ext.Viewport.add(Ext.create('picasa.view.Main'));
     this.firstView = this.getMainview().getActiveItem();
   },
@@ -31,6 +30,7 @@ Ext.define('picasa.controller.Main', {
     var store = Ext.getStore('PhotosFeature');
     var photodata = store.data.items;
     var carousel = Ext.create('picasa.view.DetailView', {
+      title:'Featured',
       fullscreen:true,
       defaults:{
         styleHtmlContent:true
@@ -55,12 +55,9 @@ Ext.define('picasa.controller.Main', {
     }
   },
   onPush:function () {
-    //console.log("push");
     this.getRefreshbutton().setHidden(true);
   },
   onPop:function () {
-    //console.log("pop");
-    //console.log(this.getMainview().items.length);
     if (this.firstView === this.getMainview().getActiveItem()) {
       this.getRefreshbutton().setHidden(false);
     }

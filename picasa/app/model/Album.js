@@ -26,15 +26,6 @@ Ext.define('picasa.model.Album', {
         name:'mediaContent',
         mapping:'media$group.media$content[0]'
       }
-    ],
-    proxy:{
-      type:'scripttag',
-      url:'http://picasaweb.google.com/data/feed/api/user/thayashing?kind=album&alt=json-in-script&thumbsize=90c&imgmax=512',
-      reader:{
-        rootProperty:'feed.entry',
-        type:'json',
-        idProperty:'id.$t'
-      }
-    }
+    ]
   }
 });

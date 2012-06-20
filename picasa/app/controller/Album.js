@@ -5,26 +5,21 @@ Ext.define('picasa.controller.Album', {
     refs:{
       mainview:'mainview',
       albumview:'albumview',
-      refreshbutton:'mainview button[action=reload]'
+      alubumeachview:'alubumeachview'
     },
     control:{
       albumview:{
         itemtap:'onAlbumSelect'
       },
-      mainview:{
-        push:'onPush',
-        pop:'onPop'
+      alubumeachview:{
+        itemtap:'onAlbumEachSelect'
       }
     }
-  },
-  launch:function (app) {
-    this.firstView = this.getMainview().getActiveItem();
   },
   onAlbumSelect:function () {
     var index = arguments[1];
     var model = Ext.getStore('Albums').data.items[index].data;
     var albumurl = model.link + '&thumbsize=72c&imgmax=512';
-    console.log(albumurl);
     var album = Ext.create('picasa.view.AlbumEachView', {
       title: model.title,
       store :{
@@ -43,15 +38,25 @@ Ext.define('picasa.controller.Album', {
     });
     this.getMainview().push(album);
   },
-  onPush:function () {
-    //console.log("push");
-    this.getRefreshbutton().setHidden(true);
-  },
-  onPop:function () {
-    //console.log("pop");
-    //console.log(this.getMainview().items.length);
-    if (this.firstView === this.getMainview().getActiveItem()) {
-      this.getRefreshbutton().setHidden(false);
+  onAlbumEachSelect:function () {
+    var index = arguments[1];
+    var store = arguments[0].getStore();
+    var photodata = store.data.items;
+    var carousel = Ext.create('picasa.view.DetailView', {
+      title:'',
+      fullscreen:true,
+      defaults:{
+        styleHtmlContent:true
+      }
+    });
+    for (var i = 0; i < photodata.length; i++) {
+      var _target = photodata[i].data.mediaContent;
+      var _h = Math.floor(_target.height / _target.width * 300);
+      carousel.add({
+        html:'<div class="detailImageContainer"><img class="detailImage" src="' + _target.url + '" width="' + 300 + '" height="' + _h + '"></div>'
+      });
     }
+    carousel.setActiveItem(index);
+    this.getMainview().push(carousel);
   }
 });
