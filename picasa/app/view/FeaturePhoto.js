@@ -7,6 +7,7 @@ Ext.define("picasa.view.FeaturePhoto", {
     itemTpl:'<div class="thumb-wrap"><img src="{mediaThumbnail.url}" title="{title}" width="67"></div>',
     store:'PhotosFeature',
     emptyText:'No images to display',
+    cls:'photo67',
     scrollable:false
   },
 

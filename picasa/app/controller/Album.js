@@ -20,7 +20,7 @@ Ext.define('picasa.controller.Album', {
   onAlbumSelect:function () {
     var index = arguments[1];
     var model = Ext.getStore('Albums').data.items[index].data;
-    var albumurl = model.link + '&thumbsize=72c&imgmax=512';
+    var albumurl = model.link + '&thumbsize=100c&imgmax=512';
     var album = Ext.create('picasa.view.AlbumEachView', {
       title: model.title,
       store :{

@@ -4,8 +4,9 @@ Ext.define("picasa.view.AlbumEachView", {
   requires:[
   ],
   config: {
-    itemTpl:'<div class="thumb-wrap"><img src="{mediaThumbnail.url}" title="{title}" width="67"></div>',
-    emptyText:'No images to display'
+    itemTpl:'<div class="thumb-wrap"><img src="{mediaThumbnail.url}" title="{title}" width="100"></div>',
+    emptyText:'No images to display',
+    cls:'photo100'
   },
 
   initialize:function () {

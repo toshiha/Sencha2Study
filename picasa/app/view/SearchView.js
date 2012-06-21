@@ -5,8 +5,9 @@ Ext.define("picasa.view.SearchView", {
   ],
   config: {
     store:'PhotosSearch',
-    itemTpl:'<div class="thumb-wrap"><img src="{mediaThumbnail.url}" title="{title}" width="67"></div>',
-    emptyText:''
+    itemTpl:'<div class="thumb-wrap"><img src="{mediaThumbnail.url}" title="{title}" width="100"></div>',
+    emptyText:'',
+    cls:'photo100'
   },
   initialize:function () {
     this.callParent(arguments);

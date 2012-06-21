@@ -1,3 +1,6 @@
+$base-color: #555555;
+$base-gradient: 'flat';
+
 @import 'sencha-touch/default/all';
 
 // You may remove any of the following modules that you
@@ -16,4 +19,165 @@
 @include sencha-form;
 @include sencha-msgbox;
 
-// Your custom code goes here...
+/* picasa custom */
+//span.popTag {
+//  padding: 5px;
+//  margin-right: 5px;
+//  background: #ddd;
+//  border: 1px solid #ccc;
+//  font-size: 11px;
+//  border-radius: 3px;
+//}
+//.searchTag {
+//  display: inline-block !important;
+//  margin-right: 10px;
+//  margin-bottom: 10px;
+//  font-size: 11px;
+//  font-weight: normal;
+//}
+.searchTag .x-button-label {
+  font-weight: normal;
+}
+
+.h2title h2 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+  padding: 10px;
+}
+
+//.thumb-wrap.x-item-selected {
+//  background: #ccc;
+//}
+//.thumb-wrap.x-view-over {
+//  background: #ccc;
+//}
+//.thumb-wrap img {
+//  display: block;
+//}
+
+.x-dataview-container { overflow: hidden;}
+
+.x-dataview.photo67 {
+  padding: 0 5px;
+  .x-dataview-inner {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+  .x-dataview-item {
+    float: left;
+    padding: 5px;
+    img { display: block;}
+  }
+}
+
+.x-dataview.photo100 {
+  padding-bottom:5px;
+  .x-dataview-item {
+    float: left;
+    padding-left: 5px;
+    padding-top: 5px;
+    img { display: block;}
+  }
+}
+
+.detailImageContainer {
+  padding: 10px;
+  //background: #000;
+}
+
+//following
+.x-panel.following > .x-panel-inner{
+  display: -webkit-box !important;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  text-align: center;
+  font-size: 20px;
+}
+
+//picasaCarousel
+.x-carousel.picasaCarousel {
+  background: #000;
+}
+$indicator-light: rgba(#fff, .3);
+$indicator-light-active: rgba(#fff, .6);
+@include sencha-carousel-indicator-ui('light', $indicator-light, 'flat', $indicator-light-active, 'flat');
+
+//search
+.x-field-search.picasaSearch {
+  @include box-shadow(rgba(#333,0.3) 0px 1px 3px 0px inset);
+  margin: 0 10px 7px;
+  border: 1px solid #bbb;
+  @include border-radius(3px);
+  min-height:1.5em !important;
+  display: block;
+  .x-input-search{
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    min-height:1.5em !important;
+    font-size: 16px !important;
+  }
+}
+
+//tag
+.x-container.searchTags {
+  padding: 10px; padding-top: 0;
+  overflow:hidden;
+  .searchTag {
+    float:left;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-weight: normal;
+
+  }
+}
+
+//Album
+.album-wrap {
+  text-align: center;
+  .album-wrap-inner {
+    padding: 5px;
+    margin: 5px;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 4px #999;
+  }
+  span.title {
+    display: block;
+    padding: 0px 5px 5px;
+    font-size:11px;
+    height:12px;
+    line-height:1;
+    width: 100px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    color: #666;
+  }
+  img {display: block;
+    border: 1px solid #eee;}
+}
+
+
+.album-wrap.x-item-selected {
+  background: #eee;
+}
+.album-wrap.x-view-over {
+  background: #eee;
+}
+
+.x-dataview.myAlbum {
+  padding-left:5px;
+  padding-top:5px;
+  .x-dataview-item {
+    float: left;
+  }
+}
+
+.x-button.searchTag {
+  $bgcolor1: rgb(245,245,245);
+  $bgcolor2: rgb(220,220,220);
+  @include background-image(linear-gradient($bgcolor1, $bgcolor2));
+  -webkit-box-shadow: 0px 0px 2px #bbb;
+}

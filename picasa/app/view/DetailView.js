@@ -6,7 +6,8 @@ Ext.define("picasa.view.DetailView", {
   config: {
     indicator : true,
     fullscreen : true,
-    styleHtmlContent:true
+    ui:'light',
+    cls:'picasaCarousel'
   },
 
   initialize:function () {

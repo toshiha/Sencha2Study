@@ -31,6 +31,9 @@ Ext.define("picasa.view.Main", {
             pack : 'center'
           }
         },
+        layout : {
+          align:'center'
+        },
         items:[
           {
             title:'Explore',
@@ -39,13 +42,17 @@ Ext.define("picasa.view.Main", {
           {
             title:'Following',
             cls:'following',
-            styleHtmlContent:true,
+            xtype:'panel',
+            //styleHtmlContent:true,
+//            layout : {
+//              pack : 'center',
+//              align:'center'
+//            },
             html:'<div class="following">No Items Found.<br> Click refresh button to re-sync.</div>'
           },
           {
             title:'Albums',
-            xtype:'albumview',
-            cls:'albums'
+            xtype:'albumview'
           }
         ]
       }

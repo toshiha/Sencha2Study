@@ -14,79 +14,78 @@ Ext.define("picasa.view.ExploreView", {
     items:[
       {
         html:'<h2>Featured</h2>',
-        styleHtmlContent:true
+        cls:'h2title'
       },
       {
         xtype:'featurephoto',
-        styleHtmlContent:true,
         scrollable:false
       },
       {
         html:'<h2>Popular</h2>',
-        styleHtmlContent:true
+        cls:'h2title'
       },
       {
         xtype:'searchfield',
         placeHolder:'search',
-        styleHtmlContent:true
+        cls:'picasaSearch'
       },
       {
         scrollable:false,
-//        layout: {
-//          type: 'hbox',
-//          align: 'start',
-//          pack: 'start'
-//        },
-
+        cls:'searchTags',
         items:[
           {
             xtype:'button',
             text:'italy',
             action:'tag',
-            cls:'searchTag',
-            margin:5
+            cls:'searchTag'
           },
           {
             xtype:'button',
             text:'new',
             action:'tag',
-            cls:'searchTag',
-            margin:5
+            cls:'searchTag'
           },
           {
             xtype:'button',
             text:'flowers',
             action:'tag',
-            cls:'searchTag',
-            margin:5
+            cls:'searchTag'
           },
           {
             xtype:'button',
             text:'pics',
             action:'tag',
-            cls:'searchTag',
-            margin:5
+            cls:'searchTag'
           },
           {
             xtype:'button',
             text:'Jazz',
             action:'tag',
-            cls:'searchTag',
-            margin:5
+            cls:'searchTag'
           },
           {
             xtype:'button',
             text:'NewYork',
             action:'tag',
-            cls:'searchTag',
-            margin:5
+            cls:'searchTag'
           },
           {
             xtype:'button',
             text:'Cars2',
             action:'tag',
-            cls:'searchTag',
-            margin:5
+            cls:'searchTag'
+          },
+          {
+            xtype:'button',
+            text:'Curry',
+            action:'tag',
+            cls:'searchTag'
+          },
+          {
+            xtype:'button',
+            text:'MacBook',
+            action:'tag',
+            cls:'searchTag'
           }
         ]
       }
