@@ -7,6 +7,9 @@ Ext.application({
 
   requires:[
   ],
+  viewport: {
+    autoMaximize: true
+  },
 
 //  icon:{
 //    '57':'resources/icons/Icon.png',

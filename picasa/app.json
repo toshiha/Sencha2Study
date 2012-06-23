@@ -65,24 +65,16 @@
     /**
      * Used to automatically generate cache.manifest (HTML 5 application cache manifest) file when you build
      */
-    "appCache": {
-        /**
-         * List of items in the CACHE MANIFEST section
-         */
-        "cache": [
-            "index.html"
-        ],
-        /**
-         * List of items in the NETWORK section
-         */
-        "network": [
-            "*"
-        ],
-        /**
-         * List of items in the FALLBACK section
-         */
-        "fallback": []
-    },
+//    "appCache": {
+//        "cache": [
+//            //"index.html"
+//        ],
+//
+//        "network": [
+//            //"*"
+//        ],
+//        "fallback": []
+//    },
 
     /**
      * Extra resources to be copied along when build
@@ -123,7 +115,7 @@
         "product": "touch",
         "minVersion": 3,
         "debug": false,
-        "logger": "no"
+        "logger": false
     },
 
     /**

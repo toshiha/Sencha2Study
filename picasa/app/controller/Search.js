@@ -42,10 +42,9 @@ Ext.define('picasa.controller.Search', {
     var store = Ext.getStore('PhotosSearch');
     var photodata = store.data.items;
     var carousel = Ext.create('picasa.view.DetailView', {
-      title:this.tempTitle,
-      photoData:photodata,
-      photoIndex:index
+      title:this.tempTitle
     });
+    carousel.addPhoto(index,photodata);
     this.getMainview().push(carousel);
   },
   //タグボタンのイベントハンドラ

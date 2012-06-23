@@ -46,10 +46,9 @@ Ext.define('picasa.controller.Album', {
     var store = arguments[0].getStore();
     var photodata = store.data.items;
     var carousel = Ext.create('picasa.view.DetailView', {
-      title:'',
-      photoData:photodata,
-      photoIndex:index
+      title:''
     });
+    carousel.addPhoto(index,photodata);
     //ナビゲーションビューにビューのプッシュ
     this.getMainview().push(carousel);
   }

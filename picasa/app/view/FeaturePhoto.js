@@ -4,7 +4,7 @@ Ext.define("picasa.view.FeaturePhoto", {
   requires:[
   ],
   config: {
-    itemTpl:'<div class="thumb-wrap"><img src="{mediaThumbnail.url}" title="{title}" width="67"></div>',
+    itemTpl:'<div class="thumb-wrap"><img src="{mediaThumbnail.url}" title="{title}" width="67" height="67"></div>',
     store:'PhotosFeature',
     emptyText:'No images to display',
     cls:'photo67',

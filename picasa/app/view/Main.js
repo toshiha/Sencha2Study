@@ -12,6 +12,13 @@ Ext.define("picasa.view.Main", {
     navigationBar:{
       items:[
         {
+          html:'<span class="picasaHome">Picasa</span>',
+          itemId:'picasaHome',
+          action:'home',
+          ui:'plain',
+          align:'left'
+        },
+        {
           xtype:'button',
           action:'reload',
           iconCls:'refresh',
@@ -25,7 +32,7 @@ Ext.define("picasa.view.Main", {
     items:[
       {
         xtype:'tabpanel',
-        title:'My Picasa',
+        title:'',
         tabBar:{
           layout : {
             pack : 'center'

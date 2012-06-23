@@ -8,6 +8,7 @@ Ext.define('picasa.controller.Main', {
       exploreview:'exploreview',
       featurephoto:'featurephoto',
       refreshbutton:'mainview button[action=reload]',
+      homebutton:'mainview button[action=home]',
       albumview :'albumview'
     },
     control:{
@@ -25,8 +26,10 @@ Ext.define('picasa.controller.Main', {
   },
   //アプリ初期化のイベントハンドラ
   launch:function (app) {
-    Ext.Viewport.add(Ext.create('picasa.view.Main'));
+    Ext.Viewport.add(Ext.create('picasa.view.Main'),{fullscreen:true});
+    //Ext.Viewport.setAutoMaximize(true);
     this.firstView = this.getMainview().getActiveItem();
+    window.scrollTo(0,1);
     //
   },
   //Featuredの個々の写真がクリックされた際のイベントハンドラ
@@ -35,10 +38,9 @@ Ext.define('picasa.controller.Main', {
     var store = Ext.getStore('PhotosFeature');
     var photodata = store.data.items;
     var carousel = Ext.create('picasa.view.DetailView', {
-      title:'Featured',
-      photoData:photodata,
-      photoIndex:index
+      title:'Featured'
     });
+    carousel.addPhoto(index,photodata);
     this.getMainview().push(carousel);
   },
   //リロードボタンのイベントハンドラ
@@ -52,11 +54,13 @@ Ext.define('picasa.controller.Main', {
   //ナビゲーションビューにビューが追加された時のイベントハンドラ
   onPush:function () {
     this.getRefreshbutton().setHidden(true);
+    this.getHomebutton().setHidden(true);
   },
   //ナビゲーションビューにビューが削除された時のイベントハンドラ
   onPop:function () {
     if (this.firstView === this.getMainview().getActiveItem()) {
       this.getRefreshbutton().setHidden(false);
+      this.getHomebutton().setHidden(false);
     }
   }
 });
