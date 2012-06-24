@@ -12,7 +12,7 @@ Ext.define("picasa.view.Main", {
     navigationBar:{
       items:[
         {
-          html:'<span class="picasaHome">My Picasa</span>',
+          html:'<span class="picasaHome"></span>',
           itemId:'picasaHome',
           action:'home',
           ui:'plain',
