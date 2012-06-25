@@ -1,3 +1,4 @@
+//SearchView用のStore
 Ext.define('picasa.store.PhotosSearch',{
   extend :'Ext.data.Store',
   requires:[

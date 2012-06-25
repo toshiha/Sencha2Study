@@ -1,3 +1,4 @@
+//メインのView
 Ext.define("picasa.view.Main", {
   //extend:'Ext.Container',
   extend:'Ext.navigation.View',
@@ -12,7 +13,7 @@ Ext.define("picasa.view.Main", {
     navigationBar:{
       items:[
         {
-          html:'<span class="picasaHome">My Picasa</span>',
+          html:'<span class="picasaHome"></span>',
           itemId:'picasaHome',
           action:'home',
           ui:'plain',

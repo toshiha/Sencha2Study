@@ -1,3 +1,4 @@
+//FeaturePhotoのView
 Ext.define("picasa.view.FeaturePhoto", {
   extend:'Ext.DataView',
   xtype:'featurephoto',

@@ -1,3 +1,4 @@
+//Album全体のView
 Ext.define("picasa.view.AlbumView", {
   extend:'Ext.DataView',
   xtype:'albumview',

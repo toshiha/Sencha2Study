@@ -1,3 +1,4 @@
+//写真詳細のView
 Ext.define("picasa.view.DetailView", {
   extend:'Ext.carousel.Carousel',
   xtype:'detailview',

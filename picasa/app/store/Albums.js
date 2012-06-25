@@ -1,3 +1,4 @@
+//AlbumView用のStore
 Ext.define('picasa.store.Albums',{
   extend :'Ext.data.Store',
   requires:[
