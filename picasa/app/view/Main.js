@@ -1,3 +1,4 @@
+//メインのView
 Ext.define("picasa.view.Main", {
   //extend:'Ext.Container',
   extend:'Ext.navigation.View',

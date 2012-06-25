@@ -1,3 +1,4 @@
+//Album個々用のView
 Ext.define("picasa.view.AlbumEachView", {
   extend:'Ext.DataView',
   xtype:'alubumeachview',

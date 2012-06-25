@@ -1,3 +1,5 @@
+//Albumモデルのクラス定義
+//field名は$や-が使えないのでmappingを使う
 Ext.define('picasa.model.Album', {
   extend:'Ext.data.Model',
   config:{

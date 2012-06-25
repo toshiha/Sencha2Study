@@ -1,9 +1,9 @@
+//ExploreのView
 Ext.define("picasa.view.ExploreView", {
   extend:'Ext.Container',
   xtype:'exploreview',
   requires:[
-    'Ext.field.Search',
-    'picasa.view.TagButton'
+    'Ext.field.Search'
   ],
   config:{
     scrollable:{

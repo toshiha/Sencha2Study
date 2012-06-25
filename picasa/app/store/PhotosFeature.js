@@ -1,3 +1,4 @@
+//FeaturePhoto用のStore
 Ext.define('picasa.store.PhotosFeature',{
   extend :'Ext.data.Store',
   requires:[

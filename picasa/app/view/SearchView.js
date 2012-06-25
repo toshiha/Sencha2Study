@@ -1,3 +1,4 @@
+//検索結果のView
 Ext.define("picasa.view.SearchView", {
   extend:'Ext.DataView',
   xtype:'searchview',
