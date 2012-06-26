@@ -45,19 +45,31 @@ $base-gradient: 'flat';
     float: left;
     padding: 5px;
     img { display: block;}
+    &.x-item-pressed {
+      background: #ccc;
+    }
+    &.x-item-selected {
+      background: #ddd;
+    }
   }
-  .x-item-selected {
-     background: #ccc;
-   }
 }
 
 .x-dataview.photo100 {
-  padding-bottom:5px;
+  //padding: 3px 0px 2px 2px;
+  .x-dataview-inner {
+    padding: 3px 0px 2px 2px;
+  }
   .x-dataview-item {
     float: left;
-    padding-left: 5px;
-    padding-top: 5px;
+    padding: 2px 2px 3px 3px;
+    //padding-top: 5px;
     img { display: block;}
+    &.x-item-pressed {
+      background: #999;
+    }
+    &.x-item-selected {
+      background: #ddd;
+    }
   }
   .x-item-selected {
     background: #ccc;
@@ -137,9 +149,12 @@ $indicator-light-active: rgba(#fff, .6);
   padding-top:5px;
   .x-dataview-item {
     float: left;
-  }
-  .x-item-selected {
-    background: #eee;
+    &.x-item-pressed {
+      background: #ddd;
+      .album-wrap-inner {
+        background: #ddd;
+      }
+    }
   }
   .x-view-over {
     background: #eee;
